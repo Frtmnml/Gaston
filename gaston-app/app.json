@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "./src/index.js",
     "name": "gaston-app",
     "slug": "gaston-app",
     "version": "1.0.0",
