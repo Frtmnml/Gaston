@@ -11,6 +11,7 @@ export const COLORS = {
     categoryGreen: "#39C36F", // Green for "Savings" and "Investment"
     categoryOrange: "#D19D56", // Orange for "Rent" and "Water bill"
     categoryBlack: "#000000", // Black for "Leisure" and "Netflix"
+    categoryRed: "#FF5757", // Red for Transport
   
     // Icons and buttons colors
     iconDelete: "#FF5757", // Red for delete icon (trash bin)
@@ -19,6 +20,8 @@ export const COLORS = {
   
     // Others
     card: "#F5F1EC", // Card beige
-    border: "#E5E5E5", // Borders and separator lines
+    border: "#E5E5E5", // Borders 
+    lines: "#DDD3C6" // Separator lines
   };
   
+ 
