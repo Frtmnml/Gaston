@@ -41,9 +41,11 @@ function App() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{
+      {/* <Tab.Screen name="Home" component={HomeScreen} options={{
         headerTitle: (props) => <HeaderStack {...props} />,
-      }}/>
+      }}/> */}
+
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="AddScreen" component={AddScreen} />
       <Tab.Screen name="HistoryScreen" component={HistoryScreen} />
     </Tab.Navigator>
@@ -53,23 +55,23 @@ function App() {
 
 const styles = StyleSheet.create({
   tabContainer: {
-    position: 'absolute',
-    bottom: 15,
-    width: '90%',
-    height: 70,
-    backgroundColor: COLORS.card,
-    borderRadius: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-around', // Space icons evenly across the container
-    alignItems: 'center', // Vertically center items in the container
-    alignContent: 'center',
-    paddingHorizontal: 10,
-    marginHorizontal: '5%',
+    // position: 'absolute',
+    // bottom: 15,
+    // width: '90%',
+    // height: 70,
+    // backgroundColor: COLORS.card,
+    // borderRadius: 20,
+    // flexDirection: 'row',
+    // justifyContent: 'space-around', // Space icons evenly across the container
+    // alignItems: 'center', // Vertically center items in the container
+    // alignContent: 'center',
+    // paddingHorizontal: 10,
+    // marginHorizontal: '5%',
   },
   tabIcon: {
-    bottom: 15,
-    justifyContent: 'center', // Center the icon
-    alignItems: 'center', // Align icon vertically
+    // bottom: 15,
+    // justifyContent: 'center', // Center the icon
+    // alignItems: 'center', // Align icon vertically
   },
 });
 
