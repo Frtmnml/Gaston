@@ -9,6 +9,7 @@ export default class Chart extends Component {
 
     const series = [
       { value: 430, color: COLORS.categoryGreen },
+      { value: 123, color: COLORS.primary },
       { value: 321, color: COLORS.categoryOrange },
       { value: 185, color: COLORS.categoryBlack },
       { value: 123, color: COLORS.categoryRed },

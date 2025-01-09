@@ -1,79 +1,65 @@
-import { Image, StyleSheet } from 'react-native';
-import { HeaderStack } from './components/HeaderStack'
+import React from 'react';
+import { Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from './screens/HomeScreen';
 import AddScreen from './screens/AddScreen';
 import HistoryScreen from './screens/HistoryScreen';
 
-import { COLORS } from './theme/theme';
-
 const Tab = createBottomTabNavigator();
-
-
 
 function App() {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={({ route },) => ({
         tabBarStyle: { ...styles.tabContainer },
-        tabBarShowLabel: false,
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
+        tabBarShowLabel: true,
+        tabBarIconStyle: { display: "none" },
+        tabBarLabel: ({ focused }) => {
+          let label;
 
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'AddScreen') {
-            iconName = focused ? 'add-circle' : 'add-circle-outline';
-          } else if (route.name === 'HistoryScreen') {
-            iconName = focused ? 'document' : 'document-outline';
+            label = 'Home';
+          } else if (route.name === 'Add') {
+            label = 'Add';
+          } else if (route.name === 'History') {
+            label = 'History';
           }
 
           return (
-            <Ionicons
-              style={styles.tabIcon}
-              name={iconName}
-              size={focused ? 28 : 22}
-              color={focused ? '#DA9F53' : 'gray'}
-            />
+            <Text
+              style={{
+                ...styles.tabLabel,
+                opacity: focused ? 1 : 0.4, // Highlight the label by adjusting opacity
+              }}
+            >
+              {label}
+            </Text>
           );
         },
       })}
     >
-      {/* <Tab.Screen name="Home" component={HomeScreen} options={{
-        headerTitle: (props) => <HeaderStack {...props} />,
-      }}/> */}
-
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="AddScreen" component={AddScreen} />
-      <Tab.Screen name="HistoryScreen" component={HistoryScreen} />
+      <Tab.Screen name="Add" component={AddScreen} />
+      <Tab.Screen name="History" component={HistoryScreen} />
     </Tab.Navigator>
-
   );
 }
 
 const styles = StyleSheet.create({
   tabContainer: {
-    // position: 'absolute',
-    // bottom: 15,
-    // width: '90%',
-    // height: 70,
-    // backgroundColor: COLORS.card,
-    // borderRadius: 20,
-    // flexDirection: 'row',
-    // justifyContent: 'space-around', // Space icons evenly across the container
-    // alignItems: 'center', // Vertically center items in the container
-    // alignContent: 'center',
-    // paddingHorizontal: 10,
-    // marginHorizontal: '5%',
+    height: 40,
+    justifyContent: 'center',
+    backgroundColor: '#071A15',
+    borderTopWidth: 0, // Removes the white line
+    elevation: 0, // Removes shadow on Android
+    shadowOpacity: 0, // Removes shadow on iOS
   },
-  tabIcon: {
-    // bottom: 15,
-    // justifyContent: 'center', // Center the icon
-    // alignItems: 'center', // Align icon vertically
+  tabLabel: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#FEDFB8',
   },
 });
-
 
 export default App;
